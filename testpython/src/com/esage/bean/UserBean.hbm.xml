@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+    <hibernate-mapping>
+    
+    <class name="com.cy.beans.UserBean" table="t_user" catalog="j2ee">   <!-- catalog数据库 -->
+    
+    <id name="id" type="int"><!-- 此行的ID，为对象的属性ID -->
+    <column name="id"></column><!-- 此行的ID，为表字段ID -->
+    <generator class="identity"></generator><!-- 给ID指定生成策略 -->
+    </id>
+    
+    <property name="userName" type="java.lang.String">
+     <column name="userName"></column>
+    </property>
+    
+    <property name="password" type="java.lang.String">
+    <column name="pwd"></column>
+    </property>
+    
+    </class>
+     
+    </hibernate-mapping>
