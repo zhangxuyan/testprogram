@@ -20,7 +20,7 @@ import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
 
-import com.sun.management.OperatingSystemMXBean;
+//import com.sun.management.OperatingSystemMXBean;
 
 
 public class test {
@@ -31,7 +31,7 @@ public class test {
 	public static void main(String[] args)throws Exception {
 		// TODO Auto-generated method stub
 		 System.out.println(getIpAddress());
-		 System.out.println(getMemery());
+//		 System.out.println(getMemery());
 		 
 	}
 
@@ -87,18 +87,18 @@ public class test {
 //	    }  
 	  
 
-	 // 获取内存使用率
-		public static String getMemery() {
-
-			OperatingSystemMXBean osmxb = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
-			long totalvirtualMemory =  osmxb.getTotalSwapSpaceSize(); // 剩余的物理内存
-			long freePhysicalMemorySize = osmxb.getFreePhysicalMemorySize();
-			Double compare = (Double) (1 - freePhysicalMemorySize * 1.0 / totalvirtualMemory) * 100;
-
-			String str = compare.intValue() + "%";
-			return str;
-
-		}
+//	 // 获取内存使用率
+//		public static String getMemery() {
+//
+//			OperatingSystemMXBean osmxb = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
+//			long totalvirtualMemory =  osmxb.getTotalSwapSpaceSize(); // 剩余的物理内存
+//			long freePhysicalMemorySize = osmxb.getFreePhysicalMemorySize();
+//			Double compare = (Double) (1 - freePhysicalMemorySize * 1.0 / totalvirtualMemory) * 100;
+//
+//			String str = compare.intValue() + "%";
+//			return str;
+//
+//		}
 
 
 }
