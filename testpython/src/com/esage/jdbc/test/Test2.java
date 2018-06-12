@@ -1,4 +1,4 @@
-package com.test;
+package com.esage.jdbc.test;
 
 public class Test2 {
 	public static void main(String[] args) {

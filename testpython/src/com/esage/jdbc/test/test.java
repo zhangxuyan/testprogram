@@ -1,4 +1,4 @@
-package com.test;
+package com.esage.jdbc.test;
 
 import java.lang.management.ManagementFactory;
 import java.net.InetAddress;
@@ -37,19 +37,19 @@ public class test {
 
 	private static  void getSystemTime() {
 
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// ÉèÖÃÈÕÆÚ¸ñÊ½
-		System.out.println(df.format(new Date()));// new Date()Îª»ñÈ¡µ±Ç°ÏµÍ³Ê±¼ä
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½Ê½
+		System.out.println(df.format(new Date()));// new Date()Îªï¿½ï¿½È¡ï¿½ï¿½Ç°ÏµÍ³Ê±ï¿½ï¿½
 
 	}
 
 	private static  void getInputTime() {
-		// long timeStamp = 1495777335060;//Ö±½ÓÊÇÊ±¼ä´Á
-		long timeStamp = System.currentTimeMillis(); // »ñÈ¡µ±Ç°Ê±¼ä´Á,Ò²¿ÉÒÔÊÇÄã×ÔÒÑ¸øµÄÒ»¸öËæ»úµÄ»òÊÇ±ðÈË¸øÄãµÄÊ±¼ä´Á(Ò»¶¨ÊÇlongÐÍµÄÊý¾Ý)
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// Õâ¸öÊÇÄãÒª×ª³ÉºóµÄÊ±¼äµÄ¸ñÊ½
-		String sd = sdf.format(new Date(Long.parseLong(String.valueOf(timeStamp)))); // Ê±¼ä´Á×ª»»³ÉÊ±¼ä
-		System.out.println(sd);// ´òÓ¡³öÄãÒªµÄÊ±¼ä
+		// long timeStamp = 1495777335060;//Ö±ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½
+		long timeStamp = System.currentTimeMillis(); // ï¿½ï¿½È¡ï¿½ï¿½Ç°Ê±ï¿½ï¿½ï¿½,Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¸ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½Ç±ï¿½ï¿½Ë¸ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½(Ò»ï¿½ï¿½ï¿½ï¿½longï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½)
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òª×ªï¿½Éºï¿½ï¿½Ê±ï¿½ï¿½Ä¸ï¿½Ê½
+		String sd = sdf.format(new Date(Long.parseLong(String.valueOf(timeStamp)))); // Ê±ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+		System.out.println(sd);// ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê±ï¿½ï¿½
 
-		// ½á¹û¾ÍÊÇ: 2017-05-26 13:42:15
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½: 2017-05-26 13:42:15
 
 	}
 	
@@ -61,13 +61,13 @@ public class test {
 	     }  
 	
 	
-	// »ñµÃcpuÊ¹ÓÃÂÊ  
+	// ï¿½ï¿½ï¿½cpuÊ¹ï¿½ï¿½ï¿½ï¿½  
 //	    public static String getCpuRatioForWindows() {  
 //	  
 ////	        try {  
 ////	            String procCmd = System.getenv("windir")  
 ////	                   + "\\system32\\wbem\\wmic.exe process get Caption,CommandLine,KernelModeTime,ReadOperationCount,ThreadCount,UserModeTime,WriteOperationCount";  
-////	            // È¡½ø³ÌÐÅÏ¢  
+////	            // È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢  
 ////	            long[] c0 = readCpu(Runtime.getRuntime().exec(procCmd));  
 ////	            Thread.sleep(CPUTIME);  
 ////	            long[] c1 = readCpu(Runtime.getRuntime().exec(procCmd));  
@@ -87,11 +87,11 @@ public class test {
 //	    }  
 	  
 
-//	 // »ñÈ¡ÄÚ´æÊ¹ÓÃÂÊ
+//	 // ï¿½ï¿½È¡ï¿½Ú´ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½
 //		public static String getMemery() {
 //
 //			OperatingSystemMXBean osmxb = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
-//			long totalvirtualMemory =  osmxb.getTotalSwapSpaceSize(); // Ê£ÓàµÄÎïÀíÄÚ´æ
+//			long totalvirtualMemory =  osmxb.getTotalSwapSpaceSize(); // Ê£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½
 //			long freePhysicalMemorySize = osmxb.getFreePhysicalMemorySize();
 //			Double compare = (Double) (1 - freePhysicalMemorySize * 1.0 / totalvirtualMemory) * 100;
 //

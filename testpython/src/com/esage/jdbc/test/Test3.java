@@ -1,4 +1,4 @@
-package com.test;
+package com.esage.jdbc.test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -55,61 +55,61 @@ public class Test3 {
 	}
 
 	private static void selectDB() {
-		// ÉùÃ÷Connection¶ÔÏó
+		// ï¿½ï¿½ï¿½ï¿½Connectionï¿½ï¿½ï¿½ï¿½
 		Connection con;
-		// Çý¶¯³ÌÐòÃû
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		String driver = "com.mysql.jdbc.Driver";
-		// URLÖ¸ÏòÒª·ÃÎÊµÄÊý¾Ý¿âÃûmydata
+		// URLÖ¸ï¿½ï¿½Òªï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½mydata
 		String url = "jdbc:mysql://192.168.1.180:3306/test";
-		// MySQLÅäÖÃÊ±µÄÓÃ»§Ãû
+		// MySQLï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½
 		String user = "root";
-		// MySQLÅäÖÃÊ±µÄÃÜÂë
+		// MySQLï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		String password = "123456";
-		// ±éÀú²éÑ¯½á¹û¼¯
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½
 		try {
-			// ¼ÓÔØÇý¶¯³ÌÐò
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			Class.forName(driver);
-			// 1.getConnection()·½·¨£¬Á¬½ÓMySQLÊý¾Ý¿â£¡£¡
+			// 1.getConnection()ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½MySQLï¿½ï¿½ï¿½Ý¿â£¡ï¿½ï¿½
 			con = DriverManager.getConnection(url, user, password);
 			if (!con.isClosed())
 				System.out.println("Succeeded connecting to the Database!");
-			// 2.´´½¨statementÀà¶ÔÏó£¬ÓÃÀ´Ö´ÐÐSQLÓï¾ä£¡£¡
+			// 2.ï¿½ï¿½ï¿½ï¿½statementï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½SQLï¿½ï¿½ä£¡ï¿½ï¿½
 			Statement statement = con.createStatement();
-			// ÒªÖ´ÐÐµÄSQLÓï¾ä
+			// ÒªÖ´ï¿½Ðµï¿½SQLï¿½ï¿½ï¿½
 			String sql = "select * from emp";
-			// 3.ResultSetÀà£¬ÓÃÀ´´æ·Å»ñÈ¡µÄ½á¹û¼¯£¡£¡
+			// 3.ResultSetï¿½à£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å»ï¿½È¡ï¿½Ä½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			ResultSet rs = statement.executeQuery(sql);
 			System.out.println("-----------------");
-			System.out.println("Ö´ÐÐ½á¹ûÈçÏÂËùÊ¾:");
+			System.out.println("Ö´ï¿½Ð½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾:");
 			System.out.println("-----------------");
-			System.out.println("ÐÕÃû" + "\t" + "Ö°³Æ");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½" + "\t" + "Ö°ï¿½ï¿½");
 			System.out.println("-----------------");
 
 			String job = null;
 			String id = null;
 			while (rs.next()) {
-				// »ñÈ¡stunameÕâÁÐÊý¾Ý
+				// ï¿½ï¿½È¡stunameï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				job = rs.getString("job");
-				// »ñÈ¡stuidÕâÁÐÊý¾Ý
+				// ï¿½ï¿½È¡stuidï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				id = rs.getString("ename");
 
-				// Êä³ö½á¹û
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				System.out.println(id + "\t" + job);
 			}
 			rs.close();
 			con.close();
 		} catch (ClassNotFoundException e) {
-			// Êý¾Ý¿âÇý¶¯ÀàÒì³£´¦Àí
+			// ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½ï¿½ï¿½
 			System.out.println("Sorry,can`t find the Driver!");
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// Êý¾Ý¿âÁ¬½ÓÊ§°ÜÒì³£´¦Àí
+			// ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ï¿½ì³£ï¿½ï¿½ï¿½ï¿½
 			e.printStackTrace();
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		} finally {
-			System.out.println("Êý¾Ý¿âÊý¾Ý³É¹¦»ñÈ¡£¡£¡");
+			System.out.println("ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½Ý³É¹ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½");
 			// System.exit(0);
 		}
 	}
