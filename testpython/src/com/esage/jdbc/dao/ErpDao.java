@@ -11,6 +11,14 @@ import java.util.Date;
 
 public class ErpDao {
 
+	
+	public void creatTable(){
+		
+		
+		
+	}
+	
+	
 	public void insert() throws SQLException, ParseException {
 		String name;
 		String id;

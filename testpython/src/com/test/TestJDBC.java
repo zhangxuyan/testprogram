@@ -14,13 +14,13 @@ import com.esage.jdbc.dao.ErpDao;
 //import java.sql.ResultSet;
 //import java.sql.SQLException;
 //import java.sql.Statement;
-public class Test3 {
+public class TestJDBC {
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// selectDB();
-	//	insertDB();
-//		updateDB();
+		// insertDB();
+		// updateDB();
 		ErpDao delete = new ErpDao();
 		try {
 			delete.delete();
@@ -28,7 +28,7 @@ public class Test3 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	private static void updateDB() {
@@ -64,7 +64,7 @@ public class Test3 {
 		// MySQL配置时的用户名
 		String user = "root";
 		// MySQL配置时的密码
-		String password = "123456";
+		String password = "esage2020";
 		// 遍历查询结果集
 		try {
 			// 加载驱动程序
