@@ -9,18 +9,13 @@ import java.text.ParseException;
 
 import com.esage.jdbc.dao.ErpDao;
 
-//import java.sql.Connection;
-//import java.sql.DriverManager;
-//import java.sql.ResultSet;
-//import java.sql.SQLException;
-//import java.sql.Statement;
 public class Test3 {
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// selectDB();
-	//	insertDB();
-//		updateDB();
+		// insertDB();
+		// updateDB();
 		ErpDao delete = new ErpDao();
 		try {
 			delete.delete();
@@ -28,7 +23,7 @@ public class Test3 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	private static void updateDB() {
