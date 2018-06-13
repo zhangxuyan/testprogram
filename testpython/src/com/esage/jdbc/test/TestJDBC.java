@@ -4,6 +4,7 @@
 //
 //}
 package com.esage.jdbc.test;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -22,9 +23,28 @@ public class TestJDBC {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// selectDB();
+		
+		//creatTable();
 		// insertDB();
-		// updateDB();
+		//selectDB();
+		
+		 updateDB();
+	//	delete();
+
+	}
+
+	private static void creatTable() {
+		ErpDao createTable = new ErpDao();
+		try {
+			createTable.creatTable();
+			System.out.println("创建表成功");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	private static void delete() {
 		ErpDao delete = new ErpDao();
 		try {
 			delete.delete();
@@ -32,13 +52,13 @@ public class TestJDBC {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 	}
 
 	private static void updateDB() {
 		ErpDao update = new ErpDao();
 		try {
 			update.update();
+			System.out.println("update data success");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -49,6 +69,7 @@ public class TestJDBC {
 		ErpDao insert = new ErpDao();
 		try {
 			insert.insert();
+			System.out.println("insert data  succeeded");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

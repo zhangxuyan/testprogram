@@ -16,7 +16,7 @@ public class DbUtil {
 		// MySQL配置时的用户名
 		String user = "root";
 		// MySQL配置时的密码
-		String password = "123456";
+		String password = "esage2020";
 
 		try {
 			// 加载驱动程序

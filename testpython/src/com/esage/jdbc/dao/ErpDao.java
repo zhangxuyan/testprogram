@@ -12,9 +12,14 @@ import java.util.Date;
 public class ErpDao {
 
 	
-	public void creatTable(){
+	public void creatTable() throws SQLException{
 		
-		
+		//Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DbUtil.getConnection();//DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","root");
+		String sql = "CREATE TABLE emp (empno int not null, ename varchar(20) not null, age int null, job varchar(20) ,"
+				+ " hiredate Date ,sal Double ,primary  key (empno));";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		pstmt.executeUpdate();
 		
 	}
 	
