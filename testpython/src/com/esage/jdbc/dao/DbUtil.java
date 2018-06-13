@@ -4,8 +4,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * 数据库工具类
+ * 
+ * @author chenyonghong
+ *
+ */
 public class DbUtil {
 
+	/**
+	 * 获取一个数据库连接
+	 * 
+	 * @return
+	 */
 	public static Connection getConnection() {
 		// 声明Connection对象
 		Connection con = null;
@@ -23,30 +34,35 @@ public class DbUtil {
 			Class.forName(driver);
 			// 1.getConnection()方法，连接MySQL数据库！！
 			con = DriverManager.getConnection(url, user, password);
-			if (!con.isClosed())
-				System.out.println("Succeeded connecting to the Database!");
+			if (!con.isClosed()) {
+				// System.out.println("Succeeded connecting to the Database!");
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 
 		return con;
 	}
-	
-	
-	public  static Connection getConn() {
-	    String driver = "com.mysql.jdbc.Driver";
-	    String url = "jdbc:mysql://localhost:3306/samp_db";
-	    String username = "root";
-	    String password = "";
-	    Connection conn = null;
-	    try {
-	        Class.forName(driver); //classLoader,加载对应驱动
-	        conn = (Connection) DriverManager.getConnection(url, username, password);
-	    } catch (ClassNotFoundException e) {
-	        e.printStackTrace();
-	    } catch (SQLException e) {
-	        e.printStackTrace();
-	    }
-	    return conn;
+
+	/**
+	 * 获取一个数据库连接
+	 * 
+	 * @return
+	 */
+	public static Connection getConn() {
+		String driver = "com.mysql.jdbc.Driver";
+		String url = "jdbc:mysql://localhost:3306/samp_db";
+		String username = "root";
+		String password = "";
+		Connection conn = null;
+		try {
+			Class.forName(driver); // classLoader,加载对应驱动
+			conn = (Connection) DriverManager.getConnection(url, username, password);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return conn;
 	}
 }

@@ -11,28 +11,32 @@ import java.util.Date;
 
 public class ErpDao {
 
-	
-	public void creatTable() throws SQLException{
-		
-		//Class.forName("com.mysql.jdbc.Driver");
-		Connection conn = DbUtil.getConnection();//DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","root");
+	/**
+	 * 创建一张数据库表
+	 * 
+	 * @throws SQLException
+	 */
+	public void creatTable() throws SQLException {
+		Connection conn = DbUtil.getConnection();
 		String sql = "CREATE TABLE emp (empno int not null, ename varchar(20) not null, age int null, job varchar(20) ,"
 				+ " hiredate Date ,sal Double ,primary  key (empno));";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.executeUpdate();
-		
+		pstmt.close();
+		conn.close();
 	}
-	
-	
-	public void insert() throws SQLException, ParseException {
-		String name;
-		String id;
+
+	/**
+	 * 
+	 * @throws SQLException
+	 * @throws ParseException
+	 */
+	public void insert(int i) throws SQLException, ParseException {
 		Connection conn = DbUtil.getConnection();
 		PreparedStatement psql;
-		ResultSet res;
 		// 预处理添加数据，其中有两个参数--“？”
 		psql = conn.prepareStatement("insert into emp (empno,ename,job,hiredate,sal) " + "values(?,?,?,?,?)");
-		psql.setInt(1, 3212); // 设置参数1，创建id为3212的数据
+		psql.setInt(1, i); // 设置参数1，创建id为3212的数据
 		psql.setString(2, "王刚"); // 设置参数2，name 为王刚
 		psql.setString(3, "总裁");
 
@@ -41,6 +45,8 @@ public class ErpDao {
 		psql.setDate(4, new java.sql.Date(myDate2.getTime()));
 		psql.setFloat(5, (float) 2000.3);
 		psql.executeUpdate(); // 执行更新
+		psql.close();
+		conn.close();
 	}
 
 	public void update() throws SQLException {
@@ -51,9 +57,12 @@ public class ErpDao {
 		psql.setFloat(1, (float) 5000.0);
 		psql.setString(2, "王刚");
 		psql.executeUpdate();
+		psql.close();
+		conn.close();
 	}
 
 	public void delete() throws SQLException {
+
 		Connection conn = DbUtil.getConnection();
 		PreparedStatement psql;
 		// 预处理删除数据
@@ -61,5 +70,62 @@ public class ErpDao {
 		psql.setFloat(1, 4500);
 		psql.executeUpdate();
 		psql.close();
+		conn.close();
+	}
+
+	public void executeBatchInsert() throws SQLException {
+
+		long startTime = System.currentTimeMillis();
+
+		Connection conn = null;
+		try {
+			conn = DbUtil.getConnection();
+			conn.setAutoCommit(false);
+
+			PreparedStatement stmt = conn.prepareStatement("INSERT INTO emp(empno,ename) VALUES (?,?)");
+			// System.out.println("数据大小：" + datas.size()); // 1000000
+
+			int num = 0;
+			// for (Values v : datas) {
+			// num++;
+			// stmt.setInt(1, v.getId());
+			// stmt.setString(2, v.getStr1());
+			// stmt.setString(3, v.getStr2());
+			// stmt.setString(4, v.getStr3());
+			// stmt.addBatch();
+			// // 注意:
+			// // 每5万，提交一次;这里不能一次提交过多的数据,我测试了一下，6万5000是极限，6万6000就会出问题，插入的数据量不对。
+			// if (num > 50000) {
+			// stmt.executeBatch();
+			// conn.commit();
+			// num = 0;
+			// }
+			// }
+
+			for (int i = 1; i < 1000000; i++) {
+				num++;
+				stmt.setInt(1, i);
+				stmt.setString(2, "name" + i);
+				stmt.addBatch();
+				// 注意:
+				// 每5万，提交一次;这里不能一次提交过多的数据,我测试了一下，6万5000是极限，6万6000就会出问题，插入的数据量不对。
+				if (num > 50000) {
+					stmt.executeBatch();
+					conn.commit();
+					num = 0;
+				}
+
+			}
+			stmt.executeBatch();
+			conn.commit();
+		} catch (Exception e) {
+			conn.rollback();
+			e.printStackTrace();
+		} finally {
+			// closeConnection(conn);
+			conn.close();
+			long endTime = System.currentTimeMillis();
+			System.out.println("方法执行时间：" + (endTime - startTime) + "ms");
+		}
 	}
 }

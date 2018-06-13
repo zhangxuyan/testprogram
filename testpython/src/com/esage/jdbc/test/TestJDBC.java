@@ -23,14 +23,14 @@ public class TestJDBC {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		//creatTable();
-		// insertDB();
-		//selectDB();
-		
-		 updateDB();
-	//	delete();
 
+		// creatTable();
+		// insertDB();
+		// selectDB();
+
+		// updateDB();
+		// delete();
+		executeBatchInsert();
 	}
 
 	private static void creatTable() {
@@ -44,6 +44,7 @@ public class TestJDBC {
 		}
 
 	}
+
 	private static void delete() {
 		ErpDao delete = new ErpDao();
 		try {
@@ -68,7 +69,9 @@ public class TestJDBC {
 	private static void insertDB() {
 		ErpDao insert = new ErpDao();
 		try {
-			insert.insert();
+			for (int i = 14620; i < 100000; i++) {
+				insert.insert(i);
+			}
 			System.out.println("insert data  succeeded");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -136,6 +139,17 @@ public class TestJDBC {
 		} finally {
 			System.out.println("数据库数据成功获取！！");
 			// System.exit(0);
+		}
+	}
+
+	private static void executeBatchInsert() {
+
+		ErpDao executeBatchInsert = new ErpDao();
+		try {
+			executeBatchInsert.executeBatchInsert();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
