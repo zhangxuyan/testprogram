@@ -16,7 +16,7 @@ public class UserDaoTest {
 	@Test
 	public void testSave_1() {
 		User user = new User();
-		user.setName("张三");
+		user.setStrName("张三");
 
 		// 保存
 		userDao.save(user);
@@ -33,7 +33,7 @@ public class UserDaoTest {
 		// 从数据库中获取一条存在的数据
 		User user = userDao.getById(1);
 		if (user != null) {
-			user.setName("李四");
+			user.setStrName("李四");
 			// 更新
 			userDao.update(user);
 		}
@@ -50,7 +50,7 @@ public class UserDaoTest {
 	public void testSave_25() {
 		for (int i = 1; i <= 25; i++) {
 			User user = new User();
-			user.setName("test_" + i);
+			user.setStrName("test_" + i);
 
 			userDao.save(user); // 保存
 		}

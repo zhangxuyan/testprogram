@@ -1,27 +1,39 @@
 package com.esage.hibernate.bean;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class User {
-	private int id;
-	private String name;
+	private Integer id; // 推荐使用包装类
+    private String strName;
 
-	public int getId() {
-		return id;
+   // private Set<String> addressSet; // 未初始化的Set集合
+
+    
+    private Set<String> addressSet = new HashSet<String>(); // Set集合
+    
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+
+    public String getStrName() {
+		return strName;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setStrName(String strName) {
+		this.strName = strName;
 	}
 
-	public String getName() {
-		return name;
-	}
+	public Set<String> getAddressSet() {
+        return addressSet;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	@Override
-	public String toString() {
-		return "[User: id=" + id + ", name=" + name + "]";
-	}
+    public void setAddressSet(Set<String> addressSet) {
+        this.addressSet = addressSet;
+    }
 }

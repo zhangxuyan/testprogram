@@ -11,16 +11,18 @@ import com.esage.hibernate.bean.User;
 public class App {
 	private static SessionFactory sessionFactory;
 
-	static {
-		Configuration cfg = new Configuration();
-		cfg.configure("hibernate.cfg.xml"); // 读取指定的主配置文件
-		sessionFactory = cfg.buildSessionFactory(); // 根据配置生成Session工厂
-	}
-
+	 static {
+	 Configuration cfg = new Configuration();
+	 cfg.configure("hibernate.cfg.xml"); // 读取指定的主配置文件
+	 sessionFactory = cfg.buildSessionFactory(); // 根据配置生成Session工厂
+	 }
+	
+	
+	
 	@Test
 	public void testSave() {
 		User user = new User();
-		user.setName("张三");
+		user.setStrName("张三");
 
 		// 保存
 		Session session = sessionFactory.openSession(); // 打开一个新的Session
@@ -43,4 +45,5 @@ public class App {
 		tx.commit();
 		session.close();
 	}
+
 }
