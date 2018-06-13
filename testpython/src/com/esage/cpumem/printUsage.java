@@ -1,4 +1,4 @@
-package CpuMem;
+package com.esage.cpumem;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -29,7 +29,7 @@ public class printUsage {
 		double cpuUsed = 0;
 
 		Runtime rt = Runtime.getRuntime();
-		Process p = rt.exec("top -b -n 1");// µ÷ÓÃÏµÍ³µÄ¡°top"ÃüÁî
+		Process p = rt.exec("top -b -n 1");// ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½Ä¡ï¿½top"ï¿½ï¿½ï¿½ï¿½
 
 		BufferedReader in = null;
 		try {
@@ -40,13 +40,13 @@ public class printUsage {
 			while ((str = in.readLine()) != null) {
 				int m = 0;
 
-				if (str.indexOf(" R ") != -1) {// Ö»·ÖÎöÕýÔÚÔËÐÐµÄ½ø³Ì£¬top½ø³Ì±¾Éí³ýÍâ &&
+				if (str.indexOf(" R ") != -1) {// Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ½ï¿½ï¿½Ì£ï¿½topï¿½ï¿½ï¿½Ì±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ &&
 
 					strArray = str.split(" ");
 					for (String tmp : strArray) {
 						if (tmp.trim().length() == 0)
 							continue;
-						if (++m == 9) {// µÚ9ÁÐÎªCPUµÄÊ¹ÓÃ°Ù·Ö±È(RedHat
+						if (++m == 9) {// ï¿½ï¿½9ï¿½ï¿½ÎªCPUï¿½ï¿½Ê¹ï¿½Ã°Ù·Ö±ï¿½(RedHat
 
 							cpuUsed += Double.parseDouble(tmp);
 
@@ -68,7 +68,7 @@ public class printUsage {
 
 		double menUsed = 0;
 		Runtime rt = Runtime.getRuntime();
-		Process p = rt.exec("top -b -n 1");// µ÷ÓÃÏµÍ³µÄ¡°top"ÃüÁî
+		Process p = rt.exec("top -b -n 1");// ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½Ä¡ï¿½top"ï¿½ï¿½ï¿½ï¿½
 
 		BufferedReader in = null;
 		try {
@@ -79,7 +79,7 @@ public class printUsage {
 			while ((str = in.readLine()) != null) {
 				int m = 0;
 
-				if (str.indexOf(" R ") != -1) {// Ö»·ÖÎöÕýÔÚÔËÐÐµÄ½ø³Ì£¬top½ø³Ì±¾Éí³ýÍâ &&
+				if (str.indexOf(" R ") != -1) {// Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ½ï¿½ï¿½Ì£ï¿½topï¿½ï¿½ï¿½Ì±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ &&
 					//
 					// System.out.println("------------------3-----------------");
 					strArray = str.split(" ");
@@ -88,7 +88,7 @@ public class printUsage {
 							continue;
 
 						if (++m == 10) {
-							// 9)--µÚ10ÁÐÎªmemµÄÊ¹ÓÃ°Ù·Ö±È(RedHat 9)
+							// 9)--ï¿½ï¿½10ï¿½ï¿½Îªmemï¿½ï¿½Ê¹ï¿½Ã°Ù·Ö±ï¿½(RedHat 9)
 
 							menUsed += Double.parseDouble(tmp);
 
@@ -109,7 +109,7 @@ public class printUsage {
 		double totalHD = 0;
 		double usedHD = 0;
 		Runtime rt = Runtime.getRuntime();
-		Process p = rt.exec("df -hl");// df -hl ²é¿´Ó²ÅÌ¿Õ¼ä
+		Process p = rt.exec("df -hl");// df -hl ï¿½é¿´Ó²ï¿½Ì¿Õ¼ï¿½
 
 		BufferedReader in = null;
 		try {

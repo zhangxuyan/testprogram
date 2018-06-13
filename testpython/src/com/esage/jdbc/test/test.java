@@ -1,4 +1,4 @@
-package com.test;
+package com.esage.jdbc.test;
 
 import java.lang.management.ManagementFactory;
 import java.net.InetAddress;

@@ -1,5 +1,9 @@
-package com.test;
-
+//package com.esage.jdbc.test;
+//
+//public class TestJDBC {
+//
+//}
+package com.esage.jdbc.test;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
