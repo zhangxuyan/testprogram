@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.esage.hibernate.bean">
+	<class name="User" table="user">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="strName" />
+		<!-- addressSet属性，Set集合 table属性：集合表的名字 key子元素：集合外键的列名 element子元素：存放集合元素的列的信息 
+			sort="unsorted|natural|comparatorClass" 默认为：unsorted -->
+		<set name="addressSet" table="user_addressSet" >
+			<key column="userId"></key>
+			<element type="java.lang.String" column="address"></element>
+		</set>
+	</class>
+</hibernate-mapping>
