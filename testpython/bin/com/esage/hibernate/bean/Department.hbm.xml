@@ -9,5 +9,16 @@
             <generator class="native"></generator> 
         </id>
         <property name="name" />
+        
+        
+        <!-- 
+            employees属性，Set集合，表达的是本类与Employee的一对多的关系
+            class属性：关联的实体类型
+            key子元素：对方表中的外键列（多方的哪个表）
+        -->
+        <set name="employees">
+            <key column="departmentId"></key>
+            <one-to-many class="Employee"/>
+        </set>
     </class>
 </hibernate-mapping>

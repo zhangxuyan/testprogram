@@ -1,8 +1,12 @@
 package com.esage.hibernate.bean;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Department {
 	private Integer id;
 	private String name;
+	private Set<Employee> employees = new HashSet<Employee>(); // 关联的很多个员工
 
 	public Integer getId() {
 		return id;
@@ -20,8 +24,16 @@ public class Department {
 		this.name = name;
 	}
 
+	public Set<Employee> getEmployees() {
+		return employees;
+	}
+
+	public void setEmployees(Set<Employee> employees) {
+		this.employees = employees;
+	}
+
 	@Override
 	public String toString() {
-		return "[Department: id=" + id + ", name=" + name + "]";
+		return "Department [id=" + id + ", name=" + name + ", employees=" + employees + "]";
 	}
 }

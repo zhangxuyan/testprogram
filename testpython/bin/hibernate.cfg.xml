@@ -18,10 +18,24 @@
 		<property name="hibernate.show_sql">true</property>
 		<!-- 格式化生成的SQL语句 -->
 		<property name="hibernate.format_sql">true</property>
-		<!-- 自动生成表结构 /update/create-drop/validate -->
+		<!-- 自动生成表结构 create/update/create-drop/validate -->
 		<property name="hbm2ddl.auto">update</property>
-		<!-- 3. 导入映射文件 /testpython/src/com/esage/hibernate/bean/User.hbm.xml -->
-		<!-- <mapping resource="com/esage/hibernate/bean/User.hbm.xml" /> -->
 
+
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+
+		<!-- C3P0连接池的配置 -->
+		<property name="hibernate.c3p0.max_size">20</property> <!-- 最大连接数 -->
+		<property name="hibernate.c3p0.min_size">5</property> <!-- 最小连接数 -->
+		<property name="hibernate.c3p0.timeout">120</property> <!-- 超时时间 -->
+		<property name="hibernate.c3p0.idle_test_period">3000</property> <!-- 空闲连接(等待)时间，以秒为单位 -->
+
+
+
+		<!-- 3. 导入映射文件 /testpython/src/com/esage/hibernate/bean/User.hbm.xml -->
+		<mapping resource="com/esage/hibernate/bean/User.hbm.xml" />
+		<mapping resource="com/esage/hibernate/bean/Employee.hbm.xml" />
+		<mapping resource="com/esage/hibernate/bean/Department.hbm.xml" />
+		
 	</session-factory>
 </hibernate-configuration>

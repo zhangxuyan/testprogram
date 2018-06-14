@@ -13,7 +13,7 @@ import com.esage.hibernate.bean.User;
 public class App1 {
 	private static SessionFactory sessionFactory = new Configuration() //
 			.configure("hibernate.cfg.xml") //
-			.addClass(User.class) // 添加Hibernate实体类（加载对应的映射文件）
+			.addClass(User.class) // 添加Hibernate实体类（加载对应的映射文件）此处配置之后 hibernate.cfg.xml 中不能对该实体再做映射 ，否则就会出现 映射错误
 			.buildSessionFactory();
 
 	@Test
@@ -36,8 +36,6 @@ public class App1 {
 		session.close();
 	}
 
-	
-	
 	@Test
 	public void testGet() {
 		Session session = sessionFactory.openSession();

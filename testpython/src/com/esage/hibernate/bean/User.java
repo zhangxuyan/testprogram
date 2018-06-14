@@ -46,4 +46,9 @@ public class User {
 	public void setAddressSet(Set<String> addressSet) {
 		this.addressSet = addressSet;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", strName=" + strName + ", addressSet=" + addressSet + "]";
+	}
 }
