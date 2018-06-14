@@ -36,6 +36,8 @@ public class App1 {
 		session.close();
 	}
 
+	
+	
 	@Test
 	public void testGet() {
 		Session session = sessionFactory.openSession();

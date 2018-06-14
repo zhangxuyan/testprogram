@@ -13,7 +13,7 @@
 			sort="unsorted|natural|comparatorClass" 默认为：unsorted -->
 		<set name="addressSet" table="user_addressSet" >
 			<key column="userId"></key>
-			<element type="java.lang.String" column="address"></element>
+			<element type="string" column="address"></element>
 		</set>
 	</class>
 </hibernate-mapping>
