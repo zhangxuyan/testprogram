@@ -13,7 +13,7 @@ import com.esage.hibernate.bean.User;
 public class App1 {
 	private static SessionFactory sessionFactory = new Configuration() //
 			.configure("hibernate.cfg.xml") //
-		//	.addClass(User.class) // 添加Hibernate实体类（加载对应的映射文件）
+			.addClass(User.class) // 添加Hibernate实体类（加载对应的映射文件）
 			.buildSessionFactory();
 
 	@Test
@@ -23,13 +23,10 @@ public class App1 {
 		// -------------------------------------------
 
 		// 构建对象
-		Set<String> set = new HashSet<String>();
-		set.add("御富科贸园xxx");
-		set.add("棠东东路");
-
 		User user = new User();
-		user.setStrName("张天一");
-		user.setAddressSet(set);
+		user.setStrName("张天二");
+		user.getAddressSet().add("御富科贸园xxx");
+		user.getAddressSet().add("棠东东路");
 
 		// 保存
 		session.save(user);
@@ -49,10 +46,10 @@ public class App1 {
 		User user = (User) session.get(User.class, 1);
 		// 显示信息
 		System.out.println(user.getStrName());
-		// System.out.println(user.getAddressSet());
+		System.out.println(user.getAddressSet());
 
 		// -------------------------------------------
-//		session.getTransaction().commit();
-//		session.close();
+		session.getTransaction().commit();
+		session.close();
 	}
 }

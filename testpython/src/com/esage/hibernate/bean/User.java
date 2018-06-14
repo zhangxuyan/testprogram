@@ -5,23 +5,33 @@ import java.util.Set;
 
 public class User {
 	private Integer id; // 推荐使用包装类
-    private String strName;
+	private String strName;
 
-   // private Set<String> addressSet; // 未初始化的Set集合
+	// private Set<String> addressSet; // 未初始化的Set集合
 
-    
-    private Set<String> addressSet = new HashSet<String>(); // Set集合
-    
-    public Integer getId() {
-        return id;
-    }
+	private Set<String> addressSet = new HashSet<String>(); // Set集合
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
+	public User(Integer id, String strName, Set<String> addressSet) {
+		super();
+		this.id = id;
+		this.strName = strName;
+		this.addressSet = addressSet;
+	}
 
-    public String getStrName() {
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getStrName() {
 		return strName;
 	}
 
@@ -30,10 +40,10 @@ public class User {
 	}
 
 	public Set<String> getAddressSet() {
-        return addressSet;
-    }
+		return addressSet;
+	}
 
-    public void setAddressSet(Set<String> addressSet) {
-        this.addressSet = addressSet;
-    }
+	public void setAddressSet(Set<String> addressSet) {
+		this.addressSet = addressSet;
+	}
 }

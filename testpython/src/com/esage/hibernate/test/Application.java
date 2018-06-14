@@ -71,7 +71,7 @@ public class Application {
 	        // -------------------------------------------
 
 	        // 从员工方解除
-	        Employee employee = (Employee) session.get(Employee.class, 1);
+	        Employee employee = (Employee) session.get(Employee.class, 2);
 	        employee.setDepartment(null);
 
 	        // -------------------------------------------

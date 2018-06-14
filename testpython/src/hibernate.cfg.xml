@@ -18,10 +18,10 @@
 		<property name="hibernate.show_sql">true</property>
 		<!-- 格式化生成的SQL语句 -->
 		<property name="hibernate.format_sql">true</property>
-		<!-- 自动生成表结构            /update/create-drop/validate-->
-		<property name="hbm2ddl.auto">create</property>
-		<!-- 3. 导入映射文件 -->
-		<mapping resource="com/esage/hibernate/bean/User.hbm.xml" />
+		<!-- 自动生成表结构 /update/create-drop/validate -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- 3. 导入映射文件 /testpython/src/com/esage/hibernate/bean/User.hbm.xml -->
+		<!-- <mapping resource="com/esage/hibernate/bean/User.hbm.xml" /> -->
 
 	</session-factory>
 </hibernate-configuration>
