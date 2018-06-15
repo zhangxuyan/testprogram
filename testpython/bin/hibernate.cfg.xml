@@ -36,6 +36,6 @@
 		<mapping resource="com/esage/hibernate/bean/User.hbm.xml" />
 		<mapping resource="com/esage/hibernate/bean/Employee.hbm.xml" />
 		<mapping resource="com/esage/hibernate/bean/Department.hbm.xml" />
-		
+		<mapping class="com.esage.hibernate.bean.Book"/>
 	</session-factory>
 </hibernate-configuration>
