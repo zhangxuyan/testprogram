@@ -1,8 +1,7 @@
+=\=\=\=\=\=\=
+<<<<<<<=Updated upstream
+>>>>>>>=Stashed changes
 eclipse.preferences.version=1
-<<<<<<< Updated upstream
+encoding//src/com/esage/hibernate/test/HibernateAnnotationTest.java=gbk
 encoding//src/com/esage/jdbc/test/Test1.java=gbk
 encoding//src/com/esage/jdbc/test/test.java=gbk
-=======
-
-
->>>>>>> Stashed changes
