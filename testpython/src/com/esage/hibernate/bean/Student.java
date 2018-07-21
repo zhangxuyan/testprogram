@@ -3,10 +3,35 @@ package com.esage.hibernate.bean;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
+@Entity
+@Table(name = "t_student")
 public class Student {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	private String name;
 
+	@ManyToMany(targetEntity = Teacher.class)
+	// @joinTable : 使用@JoinTable 来描述中间表， 并描述中间表中外键与Student，Teacher的映射关系
+	// JoinColumns:它是用来描述Student 与中间表的映射关系
+	// inverseJoinColumns: 它是用来描述Teacher与中间表的映射关系
+	@JoinTable(name = "s_t", joinColumns = {
+			@JoinColumn(name = "c_student_id", referencedColumnName = "id") }, inverseJoinColumns = {
+					@JoinColumn(name = "c_teacher_id") })
+	@Cascade(CascadeType.SAVE_UPDATE)
 	private Set<Teacher> teachers = new HashSet<Teacher>(); // 关联的老师们
 
 	public Long getId() {
