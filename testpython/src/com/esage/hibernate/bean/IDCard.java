@@ -19,6 +19,18 @@ public class IDCard {
 	@GenericGenerator(strategy="uuid",name="myuuid")
 	@GeneratedValue(generator="myuuid")
 	private String cardNum;
+
+
+	public void setCardNum(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void setUser1(User1 user1) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
