@@ -43,7 +43,11 @@
 		<mapping class="com.esage.hibernate.bean.Student" />
 		<mapping class="com.esage.hibernate.bean.Teacher" />
 
+<mapping class="com.esage.hibernate.bean.IDCard" />
+		<mapping class="com.esage.hibernate.bean.User1" />
 
+		<mapping class="com.esage.hibernate.bean.Wife" />
+		<mapping class="com.esage.hibernate.bean.Husband" />
 
 	</session-factory>
 </hibernate-configuration>
