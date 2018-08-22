@@ -2,6 +2,15 @@
 <<<<<<<=Updated upstream
 >>>>>>>=Stashed changes
 eclipse.preferences.version=1
+<<<<<<< Updated upstream
+encoding//src/com/esage/hibernate/bean/Book.java=gbk
+encoding//src/com/esage/hibernate/bean/User.java=gbk
+encoding//src/com/esage/hibernate/dao/CreateSchema.java=gbk
+encoding//src/com/esage/hibernate/dao/HibernateUtils.java=gbk
 encoding//src/com/esage/hibernate/test/HibernateAnnotationTest.java=gbk
 encoding//src/com/esage/jdbc/test/Test1.java=gbk
 encoding//src/com/esage/jdbc/test/test.java=gbk
+=======
+
+
+>>>>>>> Stashed changes

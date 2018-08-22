@@ -8,10 +8,10 @@
 		<!-- 1. 配置数据库信息 -->
 		<!-- 方言(连接的数据库类型) -->
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-		<property name="connection.url">jdbc:mysql://192.168.1.180:3306/test</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/test</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.username">root</property>
-		<property name="connection.password">esage2020</property>
+		<property name="connection.password">123456</property>
 
 		<!-- 2. 其他配置 -->
 		<!-- 显示生成的SQL语句 -->
@@ -33,7 +33,7 @@
 
 
 		<!-- 3.如果用的是配置文件的方式 此处配置配置文件； 如果用的是注解的方式 ，此处配置的注解的类的全称 导入映射文件 /testpython/src/com/esage/hibernate/bean/User.hbm.xml -->
-		<mapping resource="com/esage/hibernate/bean/User.hbm.xml" />
+		<!-- <mapping resource="com/esage/hibernate/bean/User.hbm.xml" /> -->
 		<mapping resource="com/esage/hibernate/bean/Employee.hbm.xml" />
 		<mapping resource="com/esage/hibernate/bean/Department.hbm.xml" />
 		<mapping class="com.esage.hibernate.bean.Book" />
@@ -43,7 +43,11 @@
 		<mapping class="com.esage.hibernate.bean.Student" />
 		<mapping class="com.esage.hibernate.bean.Teacher" />
 
+<mapping class="com.esage.hibernate.bean.IDCard" />
+		<mapping class="com.esage.hibernate.bean.User1" />
 
+		<mapping class="com.esage.hibernate.bean.Wife" />
+		<mapping class="com.esage.hibernate.bean.Husband" />
 
 	</session-factory>
 </hibernate-configuration>
