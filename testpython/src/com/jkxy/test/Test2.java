@@ -25,6 +25,7 @@ public class Test2 {
 		// TreeSet
 		// LinkedHashSet
 		getLinkedList();
+		
 	}
 
 	public static void getArrayList() {
