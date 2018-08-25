@@ -1,10 +1,5 @@
 package com.esage.test;
 
-//public class HttpUtil {
-//
-//}
-//package com.xiaocan.demo.util;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -24,22 +19,22 @@ import org.apache.commons.lang.StringUtils;
 //commons-httpclient-3.0.jar 下载
 
 /**
- * <p>
+ * 
  * Http工具类
  * 
- * <p>
+ * 
  * Http工具类，为系统提供通用Http访问操作方法：
  * 
- * <p>
+ * 
  * 1、发送GET请求；
- * <p>
+ * 
  * 2、发送POST请求。
  * 
  */
 public class HttpUtil {
 
 	/**
-	 * <p>
+	 * 
 	 * 发送GET请求
 	 * 
 	 * @param url
@@ -54,7 +49,7 @@ public class HttpUtil {
 	}
 
 	/**
-	 * <p>
+	 * 
 	 * 发送GET请求
 	 * 
 	 * @param url
@@ -71,7 +66,7 @@ public class HttpUtil {
 	}
 
 	/**
-	 * <p>
+	 * 
 	 * 发送GET请求
 	 * 
 	 * @param url
@@ -91,7 +86,7 @@ public class HttpUtil {
 	}
 
 	/**
-	 * <p>
+	 * 
 	 * 发送GET请求
 	 * 
 	 * @param url
@@ -160,7 +155,7 @@ public class HttpUtil {
 	}
 
 	/**
-	 * <p>
+	 * 
 	 * 发送POST请求
 	 * 
 	 * @param url
@@ -177,7 +172,7 @@ public class HttpUtil {
 	}
 
 	/**
-	 * <p>
+	 * 
 	 * 发送POST请求
 	 * 
 	 * @param url
@@ -197,7 +192,7 @@ public class HttpUtil {
 	}
 
 	/**
-	 * <p>
+	 * 
 	 * 发送POST请求
 	 * 
 	 * @param url
@@ -219,7 +214,7 @@ public class HttpUtil {
 	}
 
 	/**
-	 * <p>
+	 * 
 	 * 发送POST请求
 	 * 
 	 * @param url
@@ -242,7 +237,7 @@ public class HttpUtil {
 	}
 
 	/**
-	 * <p>
+	 * 
 	 * 发送POST请求
 	 * 
 	 * @param url
@@ -332,7 +327,7 @@ public class HttpUtil {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("wd", "nima");
 		byte[] b = doGet("http://www.baidu.com", map);
-		System.out.println("-------------------" + new String(b,"utf-8"));
+		System.out.println("-------------------" + new String(b, "utf-8"));
 	}
 
 }

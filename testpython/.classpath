@@ -29,8 +29,6 @@
 	<classpathentry kind="lib" path="src/lib/gson-2.8.0.jar"/>	<classpathentry kind="lib" path="src/lib/sigar-1.6.4.jar"/>
 	<classpathentry kind="lib" path="src/lib/ganymed-ssh2-build251beta1.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="lib/slf4j-api-1.6.4.jar"/>
-	<classpathentry kind="lib" path="lib/log4j-1.2.12.jar"/>
 	<classpathentry kind="lib" path="lib/spring-web-4.0.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-support-4.0.6.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/spring-context-4.0.6.RELEASE.jar"/>
@@ -53,6 +51,10 @@
 	<classpathentry kind="lib" path="lib/commons-io-2.6-tests.jar"/>
 	<classpathentry kind="lib" path="lib/commons-io-2.6.jar"/>
 	<classpathentry kind="lib" path="lib/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="lib/logback-core-1.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.12.jar"/>
+	<classpathentry kind="lib" path="lib/logback-classic-1.0.1.jar"/>
+	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="output" path="bin"/>
