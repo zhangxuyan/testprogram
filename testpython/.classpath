@@ -19,14 +19,15 @@
 	<classpathentry kind="lib" path="src/lib/commons-lang-2.6.jar"/>
 	<classpathentry kind="lib" path="src/lib/hibernate-commons-annotations-5.0.1.Final.jar"/>
 	<classpathentry kind="lib" path="src/lib/mysql-connector-java-5.1.20-bin.jar"/>
-<classpathentry kind="lib" path="src/lib/httpclient-4.3.6.jar"/>
+	<classpathentry kind="lib" path="src/lib/httpclient-4.3.6.jar"/>
 	<classpathentry kind="lib" path="src/lib/httpcore-4.3.3.jar"/>
 	<classpathentry kind="lib" path="src/lib/commons-codec-1.6.jar"/>
 	<classpathentry kind="lib" path="src/lib/commons-logging-1.1.3.jar"/>
 	<classpathentry kind="lib" path="src/lib/fluent-hc-4.3.6.jar"/>
 	<classpathentry kind="lib" path="src/lib/httpclient-cache-4.3.6.jar"/>
 	<classpathentry kind="lib" path="src/lib/httpmime-4.3.6.jar"/>
-	<classpathentry kind="lib" path="src/lib/gson-2.8.0.jar"/>	<classpathentry kind="lib" path="src/lib/sigar-1.6.4.jar"/>
+	<classpathentry kind="lib" path="src/lib/gson-2.8.0.jar"/>
+	<classpathentry kind="lib" path="src/lib/sigar-1.6.4.jar"/>
 	<classpathentry kind="lib" path="src/lib/ganymed-ssh2-build251beta1.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="lib/spring-web-4.0.6.RELEASE.jar"/>
@@ -55,6 +56,8 @@
 	<classpathentry kind="lib" path="lib/log4j-1.2.12.jar"/>
 	<classpathentry kind="lib" path="lib/logback-classic-1.0.1.jar"/>
 	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-core-asl-1.7.1.jar"/>
+	<classpathentry kind="lib" path="lib/jackson-mapper-asl-1.7.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="output" path="bin"/>
