@@ -6,8 +6,9 @@ import java.util.Set;
 import java.util.TreeMap;
 
 public class TreeMapDemo {
-	@SuppressWarnings("unused")
+	
 	public static void main(String[] args) {
+
 		Comparator<Employee> comparator = new Comparator<Employee>() {
 			@Override
 			public int compare(Employee o1, Employee o2) {

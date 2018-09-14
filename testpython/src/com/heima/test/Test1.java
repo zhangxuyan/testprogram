@@ -7,7 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-
+//总结：保证HashSet集合元素的唯一，其实就是根据对象的hashCode和equals方法来决定的。
+//如果我们往集合中存放自定义的对象，想要保证其唯一，就必须复写hashCode和equals方法建立属于当前对象的比较方式。 
 public class Test1 {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static void main(String[] args) {
